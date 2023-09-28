@@ -20,17 +20,17 @@ os.environ["OPENAI_API_KEY"] = "sk-PHR8NgpHcaqX8feP3pZqT3BlbkFJ8dkDCWlFcUqQoutok
 
 def main():
 
-    pdf_path = r'/content/drive/My Drive/pdf'
+    pdf_path = r'/training'
 
-    csv_path = r'/content/drive/My Drive/csv'
+    csv_path = r'/training'
 
-    text_path = r'/content/drive/My Drive/text'
+    # text_path = r'/content/drive/My Drive/text'
 
 
 
     pdf_files = [f for f in os.listdir(pdf_path) if f.endswith('.pdf')]
     csv_files = [f for f in os.listdir(csv_path) if f.endswith(".csv")]
-    text_files = [f for f in os.listdir(text_path) if f.endswith(".txt")]
+    # text_files = [f for f in os.listdir(text_path) if f.endswith(".txt")]
 
     weblinks = ["https://en.wikipedia.org/wiki/Page_(computer_memory)"]
     pdf_files = [join(pdf_path, f) for f in listdir(pdf_path) if isfile(join(pdf_path, f)) and join(pdf_path, f).endswith('.pdf')]
@@ -58,11 +58,11 @@ def main():
         csv_text += df.to_string()
 
 
-    text_text = ''
-
-    for text_file in text_files:
-        with open(os.path.join(text_path, text_file), "r") as f:
-            text_text = f.read()
+    # text_text = ''
+    #
+    # for text_file in text_files:
+    #     with open(os.path.join(text_path, text_file), "r") as f:
+    #         text_text = f.read()
 
 
     web_text = ''
@@ -83,10 +83,10 @@ def main():
     csv_document = text_splitter.split_text(text=csv_text)
     pdf_document = text_splitter.split_text(text=page_text)
     web_document = text_splitter.split_text(text=web_text)
-    text_document = text_splitter.split_text(text=text_text)
+    # text_document = text_splitter.split_text(text=text_text)
 
 
-    all_documents = csv_document + web_document + text_document +pdf_document
+    all_documents = csv_document + web_document  +pdf_document
     llm = ChatOpenAI(temperature=0, max_tokens=1000, model_name="gpt-3.5-turbo")
     #Vectorize the documents and create vectorstore
     embeddings = OpenAIEmbeddings()
@@ -96,7 +96,7 @@ def main():
     #st.balloons()
 
 
-    if csv_text and web_text and text_text is not None:
+    if csv_text and web_text  is not None:
 
 
         try:
