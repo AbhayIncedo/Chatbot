@@ -22,7 +22,7 @@ def main():
 
 
     dir_path = os.path.join(os.getcwd(),"training")
-    dir_path2 = os.path.join(os.getcwd(), "EAGLE2030_Datasheet")
+    dir_path_2 = os.path.join(os.getcwd(), "EAGLE2030_Datasheet")
     print(f"HERERERERERERR == {dir_path}, +++++++ {dir_path_2}")
     pdf_path = r'/training'
 
