@@ -15,7 +15,7 @@ import requests
 import pandas as pd
 from os import listdir
 from os.path import isfile, join
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = ""
 
 
 def main():
