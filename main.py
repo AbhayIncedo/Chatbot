@@ -20,6 +20,10 @@ os.environ["OPENAI_API_KEY"] = "sk-PHR8NgpHcaqX8feP3pZqT3BlbkFJ8dkDCWlFcUqQoutok
 
 def main():
 
+
+    dir_path = os.path.join(os.getcwd(),"training")
+    dir_path2 = os.path.join(os.getcwd(), "EAGLE2030_Datasheet")
+    print(f"HERERERERERERR == {dir_path}, +++++++ {dir_path_2}")
     pdf_path = r'/training'
 
     csv_path = r'/training'
